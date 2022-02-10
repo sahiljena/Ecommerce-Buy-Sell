@@ -37,6 +37,9 @@ const ProductPage = ({token , setToken}) =>{
     // if(listings.length===1){
     //     document.title = `${listings[0].title} - Rs ${listings[0].expectedPrice}`
     // }
+    if(listings.length>0){
+        document.title = `${listings[0].title}`;
+    }
     if(loading){
         return (
             <div className="grid justify-items-center items-center h-screen">
@@ -54,9 +57,9 @@ const ProductPage = ({token , setToken}) =>{
         {listings.length>0?<div class="px-5 md:py-5 md:mt-10 pb-10">
             {
                 listings.map((data)=>{
-                    //console.log(data);
+                    console.log(data);
                     return <>
-                        <Product type="full" nav={data._id} img={data.prodcutImg} title={data.title} description={data.description} price={data.expectedPrice} old={data.productAge} />
+                        <Product email_c={data.username} type="full" nav={data._id} img={data.prodcutImg} title={data.title} description={data.description} price={data.expectedPrice} old={data.productAge} />
                     </>
                 })
             }

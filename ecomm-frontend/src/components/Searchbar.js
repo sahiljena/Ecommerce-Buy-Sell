@@ -58,11 +58,11 @@ const Searchbar = ({token}) =>{
                 </button>
             </div>
             <div className="overflow-visible h-0 z-10">
-                {listings && <div className="bg-slate-100 px-2 py-2">
-                {listings && listings.map((data)=>{
-                    return<a href={`/item/${data._id}`}><div className="overflow-auto flex mt-4 rounded bg-gray-200 text-gray-600 px-4 py-4 w-80">{data.title}</div></a>
-                })}
-                </div>}
+                {listings.length>0?<div className="bg-slate-100 px-2 py-2">
+                    {listings && listings.map((data)=>{
+                        return<a href={`/item/${data._id}`}><div className="overflow-auto flex mt-4 rounded bg-gray-200 text-gray-600 px-4 py-4 w-80">{data.title}</div></a>
+                    })}
+                </div>:null}
             </div>
         </div>
         
