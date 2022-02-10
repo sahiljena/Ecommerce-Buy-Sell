@@ -8,6 +8,7 @@ This app has the following features:
 - React.js for Frontend
 - Node.js and Express.js for Backend
 - MonogDB for Database
+- Tailwind CSS for frontend UI
 ## 🔥 Demo
 https://ecomm-buy-sell.netlify.app/ <br/>
 Credentials for testing
