@@ -14,13 +14,13 @@ const MyListings = ({token , setToken }) =>{
     const fetchListings = async () =>{
         setLoading(true)
         try{
-            const response = await fetch('http://localhost:5000/api/listings/my',{
+            const response = await fetch('https://ecomm-backend-xcv34.herokuapp.com/api/listings/my',{
                 headers:{
                     'Authorization' : `Bearer ${token}`
                 }
             })
             const tours = await response.json()
-            console.log(tours)
+            //console.log(tours)
             setLoading(false)
             setListings(tours)
         } catch(error){
@@ -39,7 +39,7 @@ const MyListings = ({token , setToken }) =>{
     const handleDelete = async (id) =>{
         setLoading(true)
         try{
-            const response = await fetch('http://localhost:5000/api/listings/delete',{
+            const response = await fetch('https://ecomm-backend-xcv34.herokuapp.com/api/listings/delete',{
                 method:"POST",
                 headers:{
                     'Authorization' : `Bearer ${token}`,

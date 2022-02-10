@@ -14,13 +14,13 @@ const ProductPage = ({token , setToken}) =>{
 
     const fetchListings = async () =>{
         setLoading(true)
-        var endpoint = `http://localhost:5000/api/listings/find?id=${params.id}`
+        var endpoint = `https://ecomm-backend-xcv34.herokuapp.com/api/listings/find?id=${params.id}`
         try{
             const response = await fetch(endpoint)
             const tours = await response.json()
             setLoading(false)
             setListings(tours)
-            console.log(tours)
+            //console.log(tours)
         } catch(error){
             setLoading(false)
             console.log("Error Occured");
@@ -54,7 +54,7 @@ const ProductPage = ({token , setToken}) =>{
         {listings.length>0?<div class="px-5 md:py-5 md:mt-10 pb-10">
             {
                 listings.map((data)=>{
-                    console.log(data);
+                    //console.log(data);
                     return <>
                         <Product type="full" nav={data._id} img={data.prodcutImg} title={data.title} description={data.description} price={data.expectedPrice} old={data.productAge} />
                     </>

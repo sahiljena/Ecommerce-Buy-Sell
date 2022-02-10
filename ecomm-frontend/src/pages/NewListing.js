@@ -42,7 +42,7 @@ const NewListing = ({token, setToken}) =>{
         setError(false);
         if(pName&&productImage&&category&&description&&expPrice&&age){
 
-            fetch('http://localhost:5000/api/listing/new',{
+            fetch('https://ecomm-backend-xcv34.herokuapp.com/api/listing/new',{
                 method:'POST',
                 headers:{
                     'Content-Type': 'application/json',
@@ -97,8 +97,8 @@ const NewListing = ({token, setToken}) =>{
         let formData = new FormData();
 
         formData.append("productImg",event.target.files[0]);
-        console.log(formData)
-        const resp = await fetch('http://localhost:5000/api/listing/newImg',{
+        //console.log(formData)
+        const resp = await fetch('https://ecomm-backend-xcv34.herokuapp.com/api/listing/newImg',{
                                 method:'POST',
                                 headers:{
                                     // 'Content-Type': 'multipart/form-data',
@@ -108,8 +108,8 @@ const NewListing = ({token, setToken}) =>{
                             })
         const img = await resp.json();
         setUploadedImg(img.uploaded_img);
-        console.log(img.uploaded_img);
-        console.log(uploadedImg);
+        //console.log(img.uploaded_img);
+        //console.log(uploadedImg);
         setLoading(false);
         return uploadedImg;
             // .then((data)=>{

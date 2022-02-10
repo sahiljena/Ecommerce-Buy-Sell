@@ -35,7 +35,7 @@ const Login = ({token, setToken}) => {
         setErrorMessage("");
         setStatus("");
         if(email && password){
-            fetch('http://localhost:5000/api/user/login',{
+            fetch('https://ecomm-backend-xcv34.herokuapp.com/api/user/login',{
                 method: 'POST',
                 headers: {
                 'Content-Type': 'application/json',

@@ -2,7 +2,7 @@ import React,{useState, useEffect} from 'react';
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar"
 const Register = ({token, setToken}) => {
-
+    //console.log(token);
     const [status, setStatus] = useState(0);
 
     const [name, setName] = useState("");
@@ -30,8 +30,8 @@ const Register = ({token, setToken}) => {
     const handleRegister = (event) =>{
         event.preventDefault();
         if(name && email && password){
-            console.log(name,password,email);
-            fetch('http://localhost:5000/api/user/new',{
+            //console.log(name,password,email);
+            fetch('https://ecomm-backend-xcv34.herokuapp.com/api/user/new',{
                 method: 'POST',
                 headers: {
                 'Content-Type': 'application/json',
@@ -59,6 +59,8 @@ const Register = ({token, setToken}) => {
             console.log("Something wrong !!")
         }
     }
+
+    //console.log(token);
 
     useEffect(() => {
         if(token){

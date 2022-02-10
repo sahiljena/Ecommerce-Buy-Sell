@@ -12,11 +12,11 @@ const Searchbar = ({token}) =>{
 
     const fetchListings = async () =>{
         setLoading(true)
-        var endpoint = `http://localhost:5000/api/listings/search?q=${query}`
+        var endpoint = `https://ecomm-backend-xcv34.herokuapp.com/api/listings/search?q=${query}`
         try{
             const response = await fetch(endpoint)
             const tours = await response.json()
-            console.log(tours)
+            //console.log(tours)
             setLoading(false)
             setListings(tours)
         } catch(error){
@@ -27,6 +27,7 @@ const Searchbar = ({token}) =>{
     }
     useEffect(() => {
         if(!token){
+            //console.log("HAHA");
             return (navigate('/login'));
         }
     }, [token])

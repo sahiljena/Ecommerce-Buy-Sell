@@ -1,12 +1,12 @@
 import React from "react";
 const Product = (props) =>{
     var itsurl = `/item/${props.nav}`;
-    console.log(props);
+    //console.log(props);
     if(props.type=="full"){
         return<>
                 <div className="flex flex-wrap justify-around">
                     <div className="mt-10">
-                        <img className="object-cover rounded h-98 w-96" src={`http://localhost:5000/${props.img}`} />
+                        <img className="object-cover rounded h-98 w-96" src={`https://ecomm-backend-xcv34.herokuapp.com/${props.img}`} />
                     </div>
                     <div className="text-left">
                         <h2 className="text-2xl text-purple-600">{props.title}</h2><span className="text-xs mt-2 text-gray-500">{props.old} Yrs Old</span><br />
@@ -26,7 +26,7 @@ const Product = (props) =>{
         <a href={itsurl}>
             <div className="shadow-lg rounded bg-gray-200 px-4 py-4">
                 
-                <img className="object-cover rounded h-48 w-96" src={`http://localhost:5000/${props.img}`} />
+                <img className="object-cover rounded h-48 w-96" src={`https://ecomm-backend-xcv34.herokuapp.com/${props.img}`} />
                 
                 <div className="mt-2">
                     <p className="text-gray-700 flex justify-between ">

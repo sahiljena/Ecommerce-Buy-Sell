@@ -28,7 +28,7 @@ const Navbar = ({setToken, token}) =>{
                     <button className='px-2 py-1 font-semibold text-sm text-blue-500 text-white rounded shadow-sm' onClick={()=>{navigate('/login')}}>Sign In</button>
                     <button className='px-2 py-1 font-semibold text-sm bg-blue-500 text-white rounded shadow-sm' onClick={()=>{navigate('/register')}}>Register</button>
                     </>}</div>}
-                <Searchbar token={token} setToken={setToken} />
+                {token && <Searchbar token={token} setToken={setToken} />}
             </nav>
             <nav className='flex justify-around border-b-2 px-2 py-4 hidden md:flex'>
                 <div className='flex gap-4'>

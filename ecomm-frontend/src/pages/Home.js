@@ -17,7 +17,7 @@ const Home = ({token , setToken }) =>{
     const fetchListings = async () =>{
         setLoading(true)
         try{
-            const response = await fetch('http://localhost:5000/api/listings')
+            const response = await fetch('https://ecomm-backend-xcv34.herokuapp.com/api/listings')
             const tours = await response.json()
             setLoading(false)
             setListings(tours)
@@ -59,7 +59,7 @@ const Home = ({token , setToken }) =>{
         <div class="grid 2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-x-6 gap-y-12 w-full mt-6 md:px-15 px-5 pt-5">
             {
                 listings.map((data)=>{
-                    console.log(data);
+                    //console.log(data);
                     return <>
                         <Product key={data.prodcutImg} nav={data._id} img={data.prodcutImg} title={data.title} description={data.description} price={data.expectedPrice} old={data.productAge} />
                     </>
@@ -67,9 +67,9 @@ const Home = ({token , setToken }) =>{
             }
         </div>
         <br />
-        <Category setToken={setToken} token={token} endpoint={"http://localhost:5000/api/listings/mobile/5"} category={"Mobiles"} limit={true}  />
-        <Category setToken={setToken} token={token} endpoint={"http://localhost:5000/api/listings/book/5"} category={"Books"} limit={true}  />
-        <Category setToken={setToken} token={token} endpoint={"http://localhost:5000/api/listings/laptop/5"} category={"Laptops"} limit={true}  />
+        <Category setToken={setToken} token={token} endpoint={"https://ecomm-backend-xcv34.herokuapp.com/api/listings/mobile/5"} category={"Mobiles"} limit={true}  />
+        <Category setToken={setToken} token={token} endpoint={"https://ecomm-backend-xcv34.herokuapp.com/api/listings/book/5"} category={"Books"} limit={true}  />
+        <Category setToken={setToken} token={token} endpoint={"https://ecomm-backend-xcv34.herokuapp.com/api/listings/laptop/5"} category={"Laptops"} limit={true}  />
         </>:<div className="text-xl px-5 py-5 mt-30 text-center">:( Nothing to show!</div>}
         </>
     );

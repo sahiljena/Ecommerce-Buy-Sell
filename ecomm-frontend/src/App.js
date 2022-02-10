@@ -25,9 +25,9 @@ function App() {
       <Route path='/search' exact element={<Searchbar token={token} setToken={setToken}   />} />
       <Route path='/item/:id' exact element={<Productpage token={token} setToken={setToken} />} />
       <Route path='/mylistings' exact element={<MyListings setToken={setToken} token={token}  />} />
-      <Route path='/mobiles' exact element={<Category setToken={setToken} token={token} endpoint={"http://localhost:5000/api/listings/mobile"} category={"Mobiles"}  />} /> 
-      <Route path='/books' exact element={<Category setToken={setToken} token={token} endpoint={"http://localhost:5000/api/listings/book"} category={"Books"}  />} /> 
-      <Route path='/laptops' exact element={<Category setToken={setToken} token={token} endpoint={"http://localhost:5000/api/listings/laptop"} category={"Laptops"}  />} /> 
+      <Route path='/mobiles' exact element={<Category setToken={setToken} token={token} endpoint={"https://ecomm-backend-xcv34.herokuapp.com/api/listings/mobile"} category={"Mobiles"}  />} /> 
+      <Route path='/books' exact element={<Category setToken={setToken} token={token} endpoint={"https://ecomm-backend-xcv34.herokuapp.com/api/listings/book"} category={"Books"}  />} /> 
+      <Route path='/laptops' exact element={<Category setToken={setToken} token={token} endpoint={"https://ecomm-backend-xcv34.herokuapp.com/api/listings/laptop"} category={"Laptops"}  />} /> 
     </Routes>
     </>
   );
