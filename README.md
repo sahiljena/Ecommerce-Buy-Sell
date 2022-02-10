@@ -14,7 +14,7 @@ Credentials for testing
 - `email : admin@admin.com`
 - `password : admin`
 
-Project Organization
+📂 Project Organization
 ------------
 
     ├── README.md          <- The top-level README for developers using this project.
